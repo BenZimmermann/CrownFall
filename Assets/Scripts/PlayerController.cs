@@ -20,7 +20,9 @@ public class PlayerController : MonoBehaviour
     // Indicates whether the player is touching the ground
     [SerializeField] private float sprintSpeed;
     private bool isGrounded;
+    private bool isJumping = false; 
     [SerializeField] private float currentSpeed;
+    [SerializeField] private float currentJumpStrength;
 
     // Called once at the start of the game
     void Start()
@@ -56,10 +58,14 @@ public class PlayerController : MonoBehaviour
     public void onJump(CallbackContext ctx)
     {
         // Only jump if the player is on the ground
-
-        if (!isGrounded) return;
-        // Adds an upward force to jump
-        rb.AddForce(Vector3.up * jumpStrength);
+        if (ctx.performed)
+        {
+            isJumping = true;
+        }
+        if (ctx.canceled)
+        {
+            isJumping = false;
+        }
         Debug.Log("Jump");
     }
     public void onSprint(CallbackContext ctx)
@@ -90,12 +96,22 @@ public class PlayerController : MonoBehaviour
         // The following line is commented out and shows how 2D movement looked in our RPG
         //transform.Translate(new Vector3(movementInput.x, movementInput.y, 0) * Time.deltaTime * actualMovementSpeed);
         Debug.DrawRay(cameraTransform.position, cameraTransform.forward * 3f, Color.green);
+
+        if (isGrounded && isJumping)
+        {
+            rb.AddForce(Vector3.up * jumpStrength);
+        }
+        // Adds an upward force to jump
     }
 
     // Called as long as the player is colliding with something (e.g. the ground)
     private void OnCollisionStay(Collision collision)
     {
-        isGrounded = true;
+        if (Vector3.Angle(Vector3.up, collision.contacts[0].normal) <= 45f)
+        {
+            isGrounded = true;
+        }
+
         Debug.Log("Grounded: " + isGrounded);
     }
 
