@@ -4,8 +4,13 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PauseMenuToggle : MonoBehaviour
 {
+    [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject pauseCanvas;
-    [SerializeField] private GameObject InvCanvas;// Menü-Canvas
+    [SerializeField] private GameObject InvCanvas;
+
+    // Referenz zum Kamera-Kontrollskript (z.B. MouseLook, FirstPersonController, etc.)
+    [SerializeField] private MonoBehaviour cameraController;
+
     private PlayerInput playerInput;
     private bool isPaused = false;
     private bool isInvOpen = false;
@@ -36,40 +41,77 @@ public class PauseMenuToggle : MonoBehaviour
         if (pauseCanvas != null)
             pauseCanvas.SetActive(isPaused);
 
-        // Cursor & Zeitsteuerung anpassen
+        // Spiel-Zustand und Kamera anpassen
         if (isPaused)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0f; // Spiel pausieren
+            PauseGame();
         }
         else
         {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-            Time.timeScale = 1f; // Spiel fortsetzen
+            ResumeGame();
         }
     }
+
     private void onInv(CallbackContext ctx)
     {
-        Debug.Log("onInv aufgerufen"); // NEU
+        Debug.Log("onInv aufgerufen");
         isInvOpen = !isInvOpen;
+
         if (InvCanvas != null)
             InvCanvas.SetActive(isInvOpen);
-        
+
+        // Spiel-Zustand und Kamera anpassen
         if (isInvOpen)
         {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            Time.timeScale = 0f; // Spiel pausieren
+            PauseGame();
         }
         else
         {
+            ResumeGame();
+        }
+
+        Debug.Log("Inventar geöffnet: " + isInvOpen);
+    }
+
+    private void PauseGame()
+    {
+        // Cursor freigeben
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        // Zeit pausieren
+        Time.timeScale = 0f;
+
+        // Kamera-Controller deaktivieren
+        if (cameraController != null)
+            cameraController.enabled = false;
+    }
+
+    private void ResumeGame()
+    {
+        // Nur fortsetzen wenn weder Pause noch Inventar offen ist
+        if (!isPaused && !isInvOpen)
+        {
+            // Cursor sperren
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-            Time.timeScale = 1f; // Spiel fortsetzen
+
+            // Zeit fortsetzen
+            Time.timeScale = 1f;
+
+            // Kamera-Controller aktivieren
+            if (cameraController != null)
+                cameraController.enabled = true;
         }
-    
-    Debug.Log("Inventar geöffnet");
     }
+
+    //void OnDestroy()
+    //{
+    //    // Input-Events abmelden
+    //    if (playerInput != null)
+    //    {
+    //        playerInput.actions["Pause"].performed -= onPause;
+    //        playerInput.actions["Inventar"].performed -= onInv;
+    //    }
+    //}
 }

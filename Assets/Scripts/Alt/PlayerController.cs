@@ -90,7 +90,7 @@ public class PlayerController : MonoBehaviour
         var movementDirection = cameraTransform.right * movementInput.x + cameraTransform.forward * movementInput.y;
         // Removes the vertical component so the player doesn't move up/down
         movementDirection = Vector3.ProjectOnPlane(movementDirection, Vector3.up).normalized;
-        var targetPos = transform.position + movementDirection * Time.deltaTime * currentSpeed;
+        var targetPos = transform.position + movementDirection * Time.fixedDeltaTime * currentSpeed;
         // Moves the player in the desired direction
         rb.MovePosition(targetPos);
         // The following line is commented out and shows how 2D movement looked in our RPG
@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
 
         if (isGrounded && isJumping)
         {
+            
             rb.AddForce(Vector3.up * jumpStrength);
         }
         // Adds an upward force to jump
