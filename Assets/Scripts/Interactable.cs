@@ -1,14 +1,12 @@
 using UnityEngine;
-using UnityEngine.Events;
-using UnityEngine.UI;
+
+[RequireComponent(typeof(Collider))]
 public class Interactable : MonoBehaviour
 {
-  //  Outline outline;
-    public string message;
-    public UnityEvent onInteraction;
+    public string interactionText = "Press E";
 
-    public void Interact()
+    public virtual void Interact()
     {
-        onInteraction.Invoke();
+        Debug.Log("Interacted with: " + gameObject.name);
     }
 }

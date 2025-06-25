@@ -1,81 +1,67 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
+using TMPro;
 using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float playerReach = 3f; // Distance within which the player can interact with objects
-    Interactable currentInteractable; // Reference to the currently interactable object
-    private PlayerInput playerInput;
+    [SerializeField] private float interactDistance = 3f;
+    [SerializeField] private Camera playerCamera;
+    [SerializeField] private GameObject uiPanel;
+    [SerializeField] private TextMeshProUGUI interactionText;
+    [SerializeField] private LayerMask interactLayer;
 
-    void Start()
+    private PlayerInput playerInput;
+    private Interactable currentInteractable;
+
+     void Start()
     {
         playerInput = GetComponent<PlayerInput>();
-        playerInput.actions["Interact"].performed += OnInteract;
+        playerInput.actions["Interact"].performed += onInteract;
+
+        if (playerCamera == null)
+            playerCamera = Camera.main;
+
+        uiPanel.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        CheckInteractable();
-    }
-
-    private void OnInteract(CallbackContext ctx)
-    {
-        if (currentInteractable != null)
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance, interactLayer))
         {
-            currentInteractable.Interact();
-        }
-    }
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-    void CheckInteractable()
-    {
-        RaycastHit hit;
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-
-        if (Physics.Raycast(ray, out hit, playerReach))
-        {
-            if (hit.collider.tag == "Interactable")
+            if (interactable != null && interactable.enabled)
             {
-                Debug.Log("Interactable object detected: " + hit.collider.name);
-
-                Interactable newInteractable = hit.collider.GetComponent<Interactable>();
-
-                if (newInteractable != null && newInteractable.enabled)
+                if (currentInteractable != interactable)
                 {
-                    SetNewCurrentInteractable(newInteractable);
+                    SetInteractable(interactable);
                 }
-                else
-                {
-                    DisableCurrentInteractable();
-                }
-            }
-            else
-            {
-                DisableCurrentInteractable();
+                return;
             }
         }
-        else
-        {
-            DisableCurrentInteractable();
-        }
+
+        ClearInteractable();
     }
 
-    void SetNewCurrentInteractable(Interactable newInteractable)
+    private void SetInteractable(Interactable interactable)
     {
-        Debug.Log("Setting new interactable: " + newInteractable.name);
-        currentInteractable = newInteractable;
-       // currentInteractable.EnableOutline();
+        currentInteractable = interactable;
+        interactionText.text = currentInteractable.interactionText;
+        uiPanel.SetActive(true);
     }
 
-    void DisableCurrentInteractable()
+    private void ClearInteractable()
     {
-        if (currentInteractable != null)
-        {
-            Debug.Log("No interactable object in range, disabling current interactable: " + currentInteractable.name);  
-            //  currentInteractable.DisableOutline();
-         currentInteractable.enabled = false;
-            currentInteractable = null;
-        }
+        currentInteractable = null;
+        uiPanel.SetActive(false);
+    }
+
+    private void onInteract(CallbackContext ctx)
+    {
+        Debug.Log("E gedrückt!");
+        currentInteractable?.Interact();
     }
 }
