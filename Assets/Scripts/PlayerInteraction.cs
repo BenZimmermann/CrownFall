@@ -28,18 +28,20 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance, interactLayer))
+        Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward * 0.3f);
+        if (Physics.Raycast(ray, out RaycastHit hit, interactDistance))
         {
             Interactable interactable = hit.collider.GetComponent<Interactable>();
-
-            if (interactable != null && interactable.enabled)
-            {
-                if (currentInteractable != interactable)
+            if (interactLayer.Contains(hit.collider.gameObject.layer))
+               {
+                if (interactable != null && interactable.IsInteractable())
                 {
-                    SetInteractable(interactable);
+                    if (currentInteractable != interactable)
+                    {
+                        SetInteractable(interactable);
+                    }
+                    return;
                 }
-                return;
             }
         }
 
@@ -48,20 +50,42 @@ public class PlayerInteraction : MonoBehaviour
 
     private void SetInteractable(Interactable interactable)
     {
+        currentInteractable?.Remove();
         currentInteractable = interactable;
-        interactionText.text = currentInteractable.interactionText;
+        currentInteractable.Apply();
+        interactionText.text = currentInteractable.GetInteractionText();
         uiPanel.SetActive(true);
     }
 
     private void ClearInteractable()
     {
+        currentInteractable?.Remove();
         currentInteractable = null;
         uiPanel.SetActive(false);
     }
 
     private void onInteract(CallbackContext ctx)
     {
-        Debug.Log("E gedrückt!");
-        currentInteractable?.Interact();
+        if (currentInteractable == null) return;
+
+        currentInteractable.Interact();
+        currentInteractable.Remove(); // Entfernt Highlight
+        currentInteractable = null;
+        uiPanel.SetActive(false);     // Versteckt UI
+    }
+}
+
+public static class UnityExtensions
+{
+
+    /// <summary>
+    /// Extension method to check if a layer is in a layermask
+    /// </summary>
+    /// <param name="mask"></param>
+    /// <param name="layer"></param>
+    /// <returns></returns>
+    public static bool Contains(this LayerMask mask, int layer)
+    {
+        return mask == (mask | (1 << layer));
     }
 }
