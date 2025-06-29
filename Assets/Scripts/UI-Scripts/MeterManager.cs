@@ -18,10 +18,10 @@ public class MeterManager : MonoBehaviour
 
         float y = target.position.y;
 
-        int evenY = Mathf.FloorToInt(y / 10f) * 10;
+        int evenY = Mathf.FloorToInt(y / 2f) * 2;
 
         // Jede 10er-Stufe zählt als 1 "Meter"
-        int currentMeter = evenY / 10;
+        int currentMeter = evenY / 2;
 
         // Nur aktualisieren, wenn Meter sich verändert
         if (currentMeter > lastCountedMeter)

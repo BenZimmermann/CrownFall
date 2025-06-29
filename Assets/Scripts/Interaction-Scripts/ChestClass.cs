@@ -17,12 +17,12 @@ public class ChestClass : MonoBehaviour, Interactable
     }
     public void Interact()
     {
+        ChestManager.Instance.AddChest(); // Assuming ChestManager is a singleton managing chest interactions
         if (!isEnabled) return;
         if (used) return;
         used = true; // Assuming 'used' is a field in this class to track interaction state
         isEnabled = false;
         Debug.Log("Interacted with: Chest");
-        Destroy(gameObject);
         Remove();
     }
     public void Apply()
