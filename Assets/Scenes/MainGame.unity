@@ -27472,8 +27472,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b89f3ed03e125a499d4c1c49b35c825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 774728091}
+  player: {fileID: 24119011}
   meterText: {fileID: 2122099604}
+  ground: {fileID: 731128762}
+  meterHeight: 1
 --- !u!1 &2122099602
 GameObject:
   m_ObjectHideFlags: 0
@@ -28096,6 +28098,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: ac43c051a425fb4429191a8d25b74ae5, type: 3}
+    - target: {fileID: 2939611188875248587, guid: c43f517b1f775e847831d6d4cc35312b, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2939611188875248587, guid: c43f517b1f775e847831d6d4cc35312b, type: 3}
       propertyPath: m_Color.b
       value: 1

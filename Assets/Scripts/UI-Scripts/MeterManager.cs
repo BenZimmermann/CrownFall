@@ -4,34 +4,31 @@ using TMPro;
 
 public class MeterManager : MonoBehaviour
 {
-    [Header("Ziel (z. B. Spieler)")]
-    [SerializeField] private Transform target;
-
-    [Header("UI (optional)")]
+    [SerializeField] private Transform player;
     [SerializeField] private TextMeshProUGUI meterText;
+    [SerializeField] private Transform ground;
+    [SerializeField] private float meterHeight = 1f; // Höhe eines "Meters" in Unity-Einheiten
 
-    private int lastCountedMeter = 0;
+    private int lastMeter = -999;
 
     private void Update()
     {
-        if (target == null) return;
+        if (player == null || ground == null) return;
 
-        float y = target.position.y;
+        float height = player.position.y - ground.position.y;
+        float minHeight = Mathf.Max(0f, height); // Sicherstellen, dass die Höhe nicht negativ wird
 
-        int evenY = Mathf.FloorToInt(y / 2f) * 2;
-
-        // Jede 10er-Stufe zählt als 1 "Meter"
-        int currentMeter = evenY / 2;
+        int current = Mathf.FloorToInt(minHeight / meterHeight);
 
         // Nur aktualisieren, wenn Meter sich verändert
-        if (currentMeter > lastCountedMeter)
+        if (current != lastMeter)
         {
-            lastCountedMeter = currentMeter;
-            Debug.Log("Meter: " + currentMeter);
+            lastMeter = current;
+            Debug.Log("Meter: " + current);
 
             if (meterText != null)
             {
-                meterText.text = "Meter: " + currentMeter;
+                meterText.text = "Meter: " + current;
             }
         }
     }
