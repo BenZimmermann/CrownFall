@@ -130,7 +130,7 @@ public class UiManager : MonoBehaviour
             cameraController.enabled = true;
         if (InvCanvas != null)
             pauseCanvas.SetActive(false);
-        isPaused = false;
+            isPaused = false;
     }
     public void QuitButtonPressed()
     {
