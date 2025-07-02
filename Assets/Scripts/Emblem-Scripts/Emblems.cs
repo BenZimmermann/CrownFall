@@ -8,6 +8,7 @@ public class Emblem : MonoBehaviour
     {
         if (player.CompareTag("Player"))
         {
+            Debug.Log("Player entered the emblem trigger area.");
             // Get the EmblemUI instance and the list of slots
             var slots = EmblemUI.Instance.GetSlots();
             // Find the slot with the type Starter

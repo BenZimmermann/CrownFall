@@ -6,12 +6,11 @@ public class EmblemUI : MonoBehaviour
 {
     public static EmblemUI Instance;
     
-    private void Start()
+    public void Initialize()
     {
         if (Instance == null)
         {
             Instance = this;
-            transform.parent.gameObject.SetActive(false); // Deactivate the parent of this object
         }
         else
         {

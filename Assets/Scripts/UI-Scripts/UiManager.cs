@@ -28,15 +28,23 @@ public class UiManager : MonoBehaviour
         // Menü am Anfang verstecken
         if (pauseCanvas != null)
             pauseCanvas.SetActive(false);
-        if (InvCanvas != null)
-            InvCanvas.SetActive(false);
+        //if (InvCanvas != null)
+        //    InvCanvas.SetActive(false);
         if (SettingsCanvas != null)
             SettingsCanvas.SetActive(false);
         // Cursor ausblenden und sperren
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        //bool isInvOpen = false;
+        bool isPaused = false;
+        if (InvCanvas != null)
+            InvCanvas.SetActive(false);
+        isInvOpen = false;
+        InvCanvas.gameObject.GetComponentInChildren<EmblemUI>().Initialize();
     }
+    public void Initialize() {
 
+    }
     private void onPause(CallbackContext ctx)
     {
         if (isInvOpen != true) // Verhindert, dass das Pausieren während des Inventar geöffnet ist, funktioniert nicht wenn Inventar offen ist
