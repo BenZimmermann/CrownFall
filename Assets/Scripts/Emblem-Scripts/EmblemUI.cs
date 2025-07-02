@@ -23,5 +23,5 @@ public class EmblemUI : MonoBehaviour
     public List<Slots> GetSlots()
     {
        return transform.GetComponentsInChildren<Slots>().ToList();
-    }
+    }   
 }
