@@ -1,3 +1,6 @@
+using NUnit.Framework;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CollectClass : MonoBehaviour, Interactable
@@ -27,6 +30,21 @@ public class CollectClass : MonoBehaviour, Interactable
         Destroy(gameObject);
         Remove();
 
+        if(CarrotManager.Instance.carrotCounter >= 3)
+        {
+            //List<Slots> slots = Object.FindObjectsByType<Slots>(FindObjectsSortMode.None).ToList();
+            List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();
+            Debug.Log($"SlotCount: {slots.Count}");
+            foreach (Slots slot in slots)
+            {
+                if(slot.slotType == SlotType.Farmer)
+                {
+                    slot.Achieve();
+
+                    return;
+                }
+            }
+        }
     }
     public void Apply()
     {
