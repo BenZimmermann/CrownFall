@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ChestClass : MonoBehaviour, Interactable
@@ -6,12 +8,13 @@ public class ChestClass : MonoBehaviour, Interactable
     public bool isEnabled = true;
     private bool used = false;
     public string interactionText = "(E) Open";
-    public Material highlightMaterial;
+    public List<GameObject> outlineObjects;
     private Material[] originalMaterials;
     private Renderer objectRenderer;
 
     public void Awake()
     {
+        SetOutline(false);
         objectRenderer = GetComponent<Renderer>();
         originalMaterials = objectRenderer.materials;
     }
@@ -27,24 +30,35 @@ public class ChestClass : MonoBehaviour, Interactable
     }
     public void Apply()
     {
+        SetOutline(true);
         {
-            if (used || highlightMaterial == null) return;
+            //if (used || highlightMaterial == null) return;
 
-            Material[] newMats = new Material[originalMaterials.Length + 1];
-            originalMaterials.CopyTo(newMats, 0);
-            newMats[newMats.Length - 1] = highlightMaterial;
+            //Material[] newMats = new Material[originalMaterials.Length + 1];
+            //originalMaterials.CopyTo(newMats, 0);
+            //newMats[newMats.Length - 1] = highlightMaterial;
 
-            objectRenderer.materials = newMats;
+            //objectRenderer.materials = newMats;
         }
     }
 
     public void Remove()
     {
-        if (objectRenderer.materials.Length == originalMaterials.Length + 1)
+        SetOutline(false);
+        //if (objectRenderer.materials.Length == originalMaterials.Length + 1)
+        //{
+        //    objectRenderer.materials = originalMaterials;
+        //}
+    }
+
+    private void SetOutline(bool isOutlineOn)
+    {
+        foreach (GameObject obj in outlineObjects)
         {
-            objectRenderer.materials = originalMaterials;
+            obj.SetActive(isOutlineOn);
         }
     }
+
     public string GetInteractionText()
     {
         return interactionText;

@@ -1,18 +1,17 @@
-using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
-public class CollectClass : MonoBehaviour, Interactable
+//erbt von Interactable, um Interaktionen zu ermöglichen
+public class NPCClass : MonoBehaviour, Interactable
 {
+    [SerializeField] private GameObject dialogueBox; // Assign this in the inspector
     public bool isInteractable;
     public bool isEnabled = true;
     private bool used = false;
-    public string interactionText = "(E) Collect";
-    //public int CarrotCounter { get; private set; } = 0;
+    public string interactionText = "(E) Talk";
     public Material highlightMaterial;
     private Material[] originalMaterials;
     private Renderer objectRenderer;
+    public UiManager UiManager;
 
     public void Awake()
     {
@@ -21,30 +20,23 @@ public class CollectClass : MonoBehaviour, Interactable
     }
     public void Interact()
     {
-        CarrotManager.Instance.AddCarrot();
         if (used) return;
         if (!isEnabled) return;
-        isEnabled = false;
         used = true; // Assuming 'used' is a field in this class to track interaction state
-        Debug.Log("Interacted with: Carrot");
-        Destroy(gameObject);
-
+        isEnabled = false;
+        Debug.Log("Interacted with: Stone_Guy");
         Remove();
-
-        if(CarrotManager.Instance.carrotCounter >= 3)
+        // Show the dialogue box
+        if (dialogueBox != null)
         {
-            //List<Slots> slots = Object.FindObjectsByType<Slots>(FindObjectsSortMode.None).ToList();
-            List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();
-            Debug.Log($"SlotCount: {slots.Count}");
-            foreach (Slots slot in slots)
-            {
-                if(slot.slotType == SlotType.Farmer)
-                {
-                    slot.Achieve();
-
-                    return;
-                }
-            }
+            dialogueBox.SetActive(true);
+            UiManager.DialogueOpened();
+            // You can also set the text of the dialogue box here if needed
+            // dialogueBox.GetComponentInChildren<Text>().text = "Hello, I am the Stone Guy!";
+        }
+        else
+        {
+            Debug.LogWarning("Dialogue box is not assigned!");
         }
     }
     public void Apply()

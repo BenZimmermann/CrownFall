@@ -6,6 +6,7 @@ public class UiManager : MonoBehaviour
 {
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject SettingsCanvas;
+    [SerializeField] private GameObject dialogueBox;
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject InvCanvas;
 
@@ -144,8 +145,40 @@ public class UiManager : MonoBehaviour
     {
         Debug.Log("QuitButtonPressed aufgerufen");
     }
+    public void DialogButtonPressed()
+    {
+        Debug.Log("DialogButtonPressed aufgerufen");
+        if (dialogueBox != null)
+        {
+            dialogueBox.SetActive(false);
+            // Cursor freigeben
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
 
-    public void SettingsButtonPressed()
+            // Kamera-Controller deaktivieren
+            if (cameraController != null)
+                cameraController.enabled = true;
+        }
+        else
+        {
+            Debug.LogWarning("Dialogue box is not assigned!");
+        }
+        dialogueBox.SetActive(false);
+    }
+    public void DialogueOpened()
+    {
+        Debug.Log("DialogPressed aufgerufen");
+       // dialogueBox.SetActive(true);
+        // Cursor freigeben
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+
+        // Kamera-Controller deaktivieren
+        if (cameraController != null)
+            cameraController.enabled = false;
+    }
+        public void SettingsButtonPressed()
     {
         Debug.Log("SettingsButtonPressed aufgerufen");
         SettingsCanvas.SetActive(true);
