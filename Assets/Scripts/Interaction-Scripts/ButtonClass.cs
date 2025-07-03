@@ -3,6 +3,7 @@ using UnityEngine;
 //erbt von Interactable, um Interaktionen zu ermöglichen
 public class ButtonClass : MonoBehaviour, Interactable
 {
+    [SerializeField] private GameObject buttonFunc;
     public bool isInteractable;
     public bool isEnabled = true;
     private bool used = false;
@@ -23,8 +24,8 @@ public class ButtonClass : MonoBehaviour, Interactable
         used = true; // Assuming 'used' is a field in this class to track interaction state
         isEnabled = false;
         Debug.Log("Interacted with: Button" );
-        Destroy(gameObject);
         Remove();
+        Destroy(buttonFunc);
     }
     public void Apply()
     {

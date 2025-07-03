@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 //erbt von Interactable, um Interaktionen zu ermöglichen
 public class NPCClass : MonoBehaviour, Interactable
@@ -26,7 +27,6 @@ public class NPCClass : MonoBehaviour, Interactable
         isEnabled = false;
         Debug.Log("Interacted with: Stone_Guy");
         Remove();
-        // Show the dialogue box
         if (dialogueBox != null)
         {
             dialogueBox.SetActive(true);
@@ -38,6 +38,19 @@ public class NPCClass : MonoBehaviour, Interactable
         {
             Debug.LogWarning("Dialogue box is not assigned!");
         }
+        //List<Slots> slots = Object.FindObjectsByType<Slots>(FindObjectsSortMode.None).ToList();
+        List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();
+            Debug.Log($"SlotCount: {slots.Count}");
+            foreach (Slots slot in slots)
+            {
+                if (slot.slotType == SlotType.Dennis)
+                {
+                    slot.Achieve();
+
+                    return;
+                }
+        }
+        // Show the dialogue box
     }
     public void Apply()
     {
