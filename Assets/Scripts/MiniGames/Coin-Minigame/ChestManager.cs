@@ -19,12 +19,12 @@ public class ChestManager : MonoBehaviour
     public void AddChest()
     {
         chestCounter++;
-        ChestPopupManager.Instance.ShowPopup("Chest opened! Total: " + chestCounter + "/4", 2f);
+        ChestPopupManager.Instance.ShowPopup("Chest opened! Total: " + chestCounter + "/11", 2f);
         EndGame();
     }
     private void EndGame()
     {
-        if (chestCounter >= 4)
+        if (chestCounter >= 11)
         {
             ChestPopupManager.Instance.ShowPopup("All Coins Returned!", 3f);
         }

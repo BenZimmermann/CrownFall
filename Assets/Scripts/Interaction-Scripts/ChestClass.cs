@@ -27,6 +27,22 @@ public class ChestClass : MonoBehaviour, Interactable
         isEnabled = false;
         Debug.Log("Interacted with: Chest");
         Remove();
+
+        if (ChestManager.Instance.chestCounter >= 11)
+        {
+            //List<Slots> slots = Object.FindObjectsByType<Slots>(FindObjectsSortMode.None).ToList();
+            List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();
+            Debug.Log($"SlotCount: {slots.Count}");
+            foreach (Slots slot in slots)
+            {
+                if (slot.slotType == SlotType.Coin)
+                {
+                    slot.Achieve();
+
+                    return;
+                }
+            }
+        }
     }
     public void Apply()
     {
