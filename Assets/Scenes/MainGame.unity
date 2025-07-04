@@ -994,7 +994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timerText: {fileID: 1235261578}
-  DevTime: 18000
+  DevTime: 240
 --- !u!1001 &24956504
 PrefabInstance:
   m_ObjectHideFlags: 0

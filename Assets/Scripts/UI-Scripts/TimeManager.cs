@@ -58,7 +58,7 @@ public class TimeManager : MonoBehaviour
     }
     private void CheckBestTime()
     {
-        if (elapsedTime >= DevTime)
+        if (elapsedTime <= DevTime)
         {
             Debug.Log("New Best Time: " + elapsedTime);
             OnBestTimeAchived(); // Update the best time
