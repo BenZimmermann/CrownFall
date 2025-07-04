@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
     public static TimeManager Instance;
 
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] private float DevTime = 18000f;
+    [SerializeField] private float DevTime = 240f;
     float elapsedTime;
     private bool hasStarted = false;
     
@@ -58,7 +58,7 @@ public class TimeManager : MonoBehaviour
     }
     private void CheckBestTime()
     {
-        if (elapsedTime <= DevTime)
+        if (elapsedTime >= DevTime)
         {
             Debug.Log("New Best Time: " + elapsedTime);
             OnBestTimeAchived(); // Update the best time

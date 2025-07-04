@@ -7,6 +7,7 @@ public class UiManager : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject SettingsCanvas;
     [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject dialogueBox2;
     [SerializeField] private GameObject pauseCanvas;
     [SerializeField] private GameObject InvCanvas;
 
@@ -148,8 +149,9 @@ public class UiManager : MonoBehaviour
     public void DialogButtonPressed()
     {
         Debug.Log("DialogButtonPressed aufgerufen");
-        if (dialogueBox != null)
+        if (dialogueBox != null || dialogueBox2)
         {
+            dialogueBox2.SetActive(false);
             dialogueBox.SetActive(false);
             // Cursor freigeben
             Cursor.lockState = CursorLockMode.Locked;
@@ -163,6 +165,7 @@ public class UiManager : MonoBehaviour
         {
             Debug.LogWarning("Dialogue box is not assigned!");
         }
+        dialogueBox2.SetActive(false);
         dialogueBox.SetActive(false);
     }
     public void DialogueOpened()
