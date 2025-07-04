@@ -31,7 +31,7 @@ public class CollectClass : MonoBehaviour, Interactable
 
         Remove();
 
-        if(CarrotManager.Instance.carrotCounter >= 3)
+        if(CarrotManager.Instance.carrotCounter >= 18)
         {
             //List<Slots> slots = Object.FindObjectsByType<Slots>(FindObjectsSortMode.None).ToList();
             List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();

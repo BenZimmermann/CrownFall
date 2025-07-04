@@ -32,15 +32,15 @@ public class FieldsManager : MonoBehaviour
     }
     private void Update()
     {
-     FieldText.text = "Collect every Carrot(" + CarrotManager.Instance.carrotCounter + "/3)";
-        if (CarrotManager.Instance.carrotCounter == 3)
+     FieldText.text = "Collect every Carrot(" + CarrotManager.Instance.carrotCounter + "/18)";
+        if (CarrotManager.Instance.carrotCounter == 18)
         {
             GameEnd();
 
         }
     }
     private void GameEnd() {
-        if (CarrotManager.Instance.carrotCounter >= 3)
+        if (CarrotManager.Instance.carrotCounter >= 18)
         {
             FieldText.text = ("All Carrots Collected!");
         }
