@@ -4,6 +4,7 @@ using System.Collections.Generic;
 //erbt von Interactable, um Interaktionen zu ermöglichen
 public class NPCClass : MonoBehaviour, Interactable
 {
+    //Made by Ben Zimmermann
     [SerializeField] private GameObject dialogueBox; // Assign this in the inspector
     public bool isInteractable;
     public bool isEnabled = true;

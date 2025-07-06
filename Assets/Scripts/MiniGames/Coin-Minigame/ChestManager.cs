@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ChestManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     public static ChestManager Instance;
     public int chestCounter { get; private set; }
 

@@ -1,5 +1,5 @@
 using UnityEngine;
-
+//Made by Ben Zimmermann
 //[RequireComponent(typeof(Collider))]
 public interface Interactable
 {

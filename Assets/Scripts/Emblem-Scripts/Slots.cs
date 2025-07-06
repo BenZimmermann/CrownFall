@@ -3,6 +3,7 @@ using UnityEngine.UI;
 
 public class Slots : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     private bool isCollected;
     public SlotType slotType;
 

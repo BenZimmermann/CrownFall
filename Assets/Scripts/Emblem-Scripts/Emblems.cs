@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class Emblem : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] SlotType slotType;
     private void OnTriggerEnter(Collider player)
     {

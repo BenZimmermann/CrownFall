@@ -6,6 +6,7 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] private float interactDistance = 3f;
     [SerializeField] private Camera playerCamera;
     [SerializeField] private GameObject uiPanel;

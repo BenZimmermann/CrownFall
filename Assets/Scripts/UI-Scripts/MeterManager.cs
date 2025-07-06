@@ -4,6 +4,7 @@ using TMPro;
 
 public class MeterManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] private Transform player;
     [SerializeField] private TextMeshProUGUI meterText;
     [SerializeField] private Transform ground;

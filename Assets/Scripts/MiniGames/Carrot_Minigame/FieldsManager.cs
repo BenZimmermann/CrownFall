@@ -4,6 +4,7 @@ using TMPro;
 
 public class FieldsManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] private GameObject FieldHeadline;
     [SerializeField] private TextMeshProUGUI FieldText;
     private CollectClass collectClass;

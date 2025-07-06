@@ -3,6 +3,7 @@ using UnityEngine;
 //erbt von Interactable, um Interaktionen zu ermöglichen
 public class ButtonClass : MonoBehaviour, Interactable
 {
+    //Made by Ben Zimmermann
     [SerializeField] private GameObject buttonFunc;
     public bool isInteractable;
     public bool isEnabled = true;

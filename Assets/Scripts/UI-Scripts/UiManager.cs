@@ -4,6 +4,7 @@ using static UnityEngine.InputSystem.InputAction;
 
 public class UiManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject SettingsCanvas;
     [SerializeField] private GameObject dialogueBox;

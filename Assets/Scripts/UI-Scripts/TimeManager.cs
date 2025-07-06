@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class TimeManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     public static TimeManager Instance;
 
     [SerializeField] TextMeshProUGUI timerText;

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EmblemUI : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     public static EmblemUI Instance;
     
     public void Initialize()

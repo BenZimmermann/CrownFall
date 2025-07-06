@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class CarrotManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     public static CarrotManager Instance;
     public int carrotCounter { get; private set; }
 

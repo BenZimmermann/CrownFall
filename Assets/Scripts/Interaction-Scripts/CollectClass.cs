@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class CollectClass : MonoBehaviour, Interactable
 {
+    //Made by Ben Zimmermann
     public bool isInteractable;
     public bool isEnabled = true;
     private bool used = false;

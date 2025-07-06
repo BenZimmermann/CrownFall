@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 public class ChestPopupManager : MonoBehaviour
 {
+    //Made by Ben Zimmermann
     [SerializeField] private GameObject popupWindow;
     [SerializeField] private TextMeshProUGUI popupText;
 
