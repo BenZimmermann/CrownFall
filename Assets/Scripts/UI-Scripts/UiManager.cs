@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using static UnityEngine.InputSystem.InputAction;
 
 public class UiManager : MonoBehaviour
@@ -50,7 +51,7 @@ public class UiManager : MonoBehaviour
     }
     private void onPause(CallbackContext ctx)
     {
-        if (isInvOpen != true) // Verhindert, dass das Pausieren während des Inventar geöffnet ist, funktioniert nicht wenn Inventar offen ist
+        if (isInvOpen || SettingsCanvas.activeSelf || dialogueBox.activeSelf || dialogueBox2.activeSelf) return;// Verhindert, dass das Pausieren während des Inventar geöffnet ist, funktioniert nicht wenn Inventar offen ist
         {
             isPaused = !isPaused;
 
@@ -71,7 +72,7 @@ public class UiManager : MonoBehaviour
 
     private void onInv(CallbackContext ctx)
     {
-        if (isPaused != true)
+        if (isPaused || SettingsCanvas.activeSelf || dialogueBox.activeSelf || dialogueBox2.activeSelf) return;
         {
             Debug.Log("onInv aufgerufen");
             isInvOpen = !isInvOpen;
@@ -146,6 +147,7 @@ public class UiManager : MonoBehaviour
     public void QuitButtonPressed()
     {
         Debug.Log("QuitButtonPressed aufgerufen");
+        SceneManager.LoadScene("MainMenu");
     }
     public void DialogButtonPressed()
     {
