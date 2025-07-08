@@ -1051,7 +1051,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 24119008}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9927ad560fa392e4d8e8d20f9e3722ab, type: 3}
   m_Name: 
@@ -27230,7 +27230,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -37882,6 +37882,7 @@ GameObject:
   - component: {fileID: 1179081980}
   - component: {fileID: 1179081981}
   - component: {fileID: 1179081982}
+  - component: {fileID: 1179081983}
   - component: {fileID: 1179081979}
   m_Layer: 0
   m_Name: GameManager
@@ -37992,6 +37993,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   popupWindow: {fileID: 2076879122}
   popupText: {fileID: 2031631327}
+--- !u!114 &1179081983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179081976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d367c7f7010e043a027724389cb5ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isFarmer: 0
+  isTime: 0
+  allEmblemeCollected: 0
+  isCoin: 0
+  isDennis: 0
+  EmblemCount: 0
 --- !u!4 &1180136395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6040669987325100447, guid: d8163fd87c27e5247bdcc18939ef1a82, type: 3}
@@ -69005,10 +69024,10 @@ SceneRoots:
   - {fileID: 1504657610}
   - {fileID: 1652522062}
   - {fileID: 1265004208}
+  - {fileID: 1819317368}
   - {fileID: 614331841}
   - {fileID: 1170672452}
   - {fileID: 1500262289}
   - {fileID: 202913596}
   - {fileID: 1179081978}
   - {fileID: 1713026267}
-  - {fileID: 1819317368}

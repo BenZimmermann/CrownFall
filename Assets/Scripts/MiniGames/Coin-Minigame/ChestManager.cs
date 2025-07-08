@@ -28,6 +28,8 @@ public class ChestManager : MonoBehaviour
         if (chestCounter >= 11)
         {
             ChestPopupManager.Instance.ShowPopup("All Coins Returned!", 3f);
+            MasterManager.Instance.isCoin = true;
+            MasterManager.Instance.MasterEmblem();
         }
 
     }

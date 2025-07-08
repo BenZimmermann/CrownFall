@@ -7,7 +7,7 @@ public class StartAmbeintManager : MonoBehaviour
     {
         if (other.CompareTag("Player") && !ambientSource.isPlaying)
         {
-            ambientSource.loop = true;
+            //ambientSource.loop = true;
             ambientSource.Play();
         }
     }
@@ -15,7 +15,7 @@ public class StartAmbeintManager : MonoBehaviour
     {
         if (other.CompareTag("Player") && !ambientSource.isPlaying)
         {
-            ambientSource.loop = true;
+           // ambientSource.loop = true;
             ambientSource.Play();
         }
     }

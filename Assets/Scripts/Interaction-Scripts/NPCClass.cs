@@ -27,6 +27,8 @@ public class NPCClass : MonoBehaviour, Interactable
         used = true; // Assuming 'used' is a field in this class to track interaction state
         isEnabled = false;
         Debug.Log("Interacted with: Stone_Guy");
+        MasterManager.Instance.isDennis = true; // Set Dennis as true in MasterManager
+        MasterManager.Instance.MasterEmblem();
         Remove();
         if (dialogueBox != null)
         {

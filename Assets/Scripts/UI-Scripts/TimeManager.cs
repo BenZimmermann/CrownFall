@@ -78,6 +78,8 @@ public class TimeManager : MonoBehaviour
             if (slot.slotType == SlotType.Time)
             {
                 slot.Achieve();
+                MasterManager.Instance.isTime = true;
+                MasterManager.Instance.MasterEmblem();
 
                 return;
             }

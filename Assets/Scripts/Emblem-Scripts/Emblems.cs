@@ -5,6 +5,7 @@ public class Emblem : MonoBehaviour
 {
     //Made by Ben Zimmermann
     [SerializeField] SlotType slotType;
+    MasterManager MasterManager;
     private void OnTriggerEnter(Collider player)
     {
         if (player.CompareTag("Player"))
@@ -21,6 +22,8 @@ public class Emblem : MonoBehaviour
                 aChievedSlot.Achieve();
                 Debug.Log("Starter slot achieved!");
                 Destroy(gameObject);
+                ++MasterManager.Instance.EmblemCount;
+                MasterManager.Instance.UpdateMasterEmblemCount();
             }
             else
             {

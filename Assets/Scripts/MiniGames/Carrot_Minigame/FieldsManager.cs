@@ -44,6 +44,8 @@ public class FieldsManager : MonoBehaviour
         if (CarrotManager.Instance.carrotCounter >= 18)
         {
             FieldText.text = ("All Carrots Collected!");
+            MasterManager.Instance.isFarmer = true;
+            MasterManager.Instance.MasterEmblem();
         }
     }
 }
