@@ -86,5 +86,12 @@ public class TimeManager : MonoBehaviour
         }
 
     }
+    public void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }
 

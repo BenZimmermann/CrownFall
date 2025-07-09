@@ -3,12 +3,15 @@ using UnityEngine.UI;
 public class CreditManager : MonoBehaviour
 {
     public static CreditManager Instance;
+
+
+
     public float scrollSpeed = 60f;
     public float startPositionY = -600f; // Starting position Y for the credits
     [SerializeField] private RectTransform creditText;
     [SerializeField] private RectTransform creditText2;
 
-    private bool isScrolling = true;
+    [SerializeField] private bool isScrolling = true;
 
     private void Awake()
     {
@@ -16,6 +19,11 @@ public class CreditManager : MonoBehaviour
         {
             Instance = this;
         }
+        else
+        {
+            Destroy(gameObject);
+        }
+        
     }
     void Start()
     {
@@ -32,5 +40,13 @@ public class CreditManager : MonoBehaviour
         creditText.anchoredPosition = new Vector2(0, startPositionY);
         creditText2.anchoredPosition = new Vector2(0, startPositionY);
         isScrolling = true;
+    }
+
+    public void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
     }
 }

@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class StartUIManager : MonoBehaviour
 {
+    [SerializeField] private AudioSource CreditMusic;
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject MainMenu;
     [SerializeField] private GameObject SettingsCanvas;
@@ -32,10 +33,15 @@ public class StartUIManager : MonoBehaviour
     }
     public void OnCreditsPressed()
     {
+        CreditManager.Instance.ResetCredits();
         if (CreditsCanvas != null)
         {
             CreditsCanvas.SetActive(!CreditsCanvas.activeSelf);
             MainMenu.SetActive(!MainMenu.activeSelf);
+        }
+        if (CreditMusic != null)
+        {
+            CreditMusic.Play();
         }
     }
     public void OnExitPressed()
@@ -51,6 +57,10 @@ public class StartUIManager : MonoBehaviour
         if (CreditsCanvas != null && CreditsCanvas.activeSelf)
         {
             CreditsCanvas.SetActive(false);
+        }
+        if (CreditMusic != null)
+        {
+            CreditMusic.Stop();
         }
         MainMenu.SetActive(true);
         CreditManager.Instance.ResetCredits();

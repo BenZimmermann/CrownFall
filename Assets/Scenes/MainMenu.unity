@@ -6503,6 +6503,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1179081978}
   - component: {fileID: 1179081979}
+  - component: {fileID: 1179081980}
   m_Layer: 0
   m_Name: MainMenuManager
   m_TagString: Untagged
@@ -6537,10 +6538,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37f34a3430369b4bb81981e0aa5ce93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CreditMusic: {fileID: 1758391421}
   mainCamera: {fileID: 330585545}
   MainMenu: {fileID: 969222472}
   SettingsCanvas: {fileID: 678573143}
   CreditsCanvas: {fileID: 1590862976}
+--- !u!114 &1179081980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1179081976}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79eea24e6c1708441b6c257d0d4632ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollSpeed: 60
+  startPositionY: -600
+  creditText: {fileID: 1763857069}
+  creditText2: {fileID: 1926595315}
+  isScrolling: 1
 --- !u!4 &1219971471 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1632038034477528659, guid: 7867a09b2d7496c478c0b5ad7df5690a, type: 3}
@@ -9383,6 +9402,135 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756581669}
   m_CullTransparentMesh: 1
+--- !u!1 &1758391420
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1758391422}
+  - component: {fileID: 1758391421}
+  m_Layer: 0
+  m_Name: CreditsMusic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1758391421
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758391420}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ef2b9b2c0a79c9a4595cba253558e8e4, type: 3}
+  m_Resource: {fileID: 8300000, guid: ef2b9b2c0a79c9a4595cba253558e8e4, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.5
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1758391422
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1758391420}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.87553024, y: 17.240276, z: 8.358211}
+  m_LocalScale: {x: 1, y: 0.115649454, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1819317368}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1763857068
 GameObject:
   m_ObjectHideFlags: 0
@@ -9394,7 +9542,6 @@ GameObject:
   - component: {fileID: 1763857069}
   - component: {fileID: 1763857071}
   - component: {fileID: 1763857070}
-  - component: {fileID: 1763857072}
   m_Layer: 0
   m_Name: CrownFall
   m_TagString: Untagged
@@ -9520,22 +9667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1763857068}
   m_CullTransparentMesh: 1
---- !u!114 &1763857072
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1763857068}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eea24e6c1708441b6c257d0d4632ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 60
-  startPositionY: -600
-  creditText: {fileID: 1763857069}
-  creditText2: {fileID: 1926595315}
 --- !u!4 &1773882748 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9060296771466015968, guid: 0b0ec15b561852a428403db83f5c415e, type: 3}
@@ -9793,6 +9924,7 @@ Transform:
   m_Children:
   - {fileID: 12665605}
   - {fileID: 846021652}
+  - {fileID: 1758391422}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1834434654
@@ -10537,7 +10669,6 @@ GameObject:
   - component: {fileID: 1926595315}
   - component: {fileID: 1926595318}
   - component: {fileID: 1926595317}
-  - component: {fileID: 1926595316}
   m_Layer: 0
   m_Name: CreditsInhalt
   m_TagString: Untagged
@@ -10564,22 +10695,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -578}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1926595316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1926595314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79eea24e6c1708441b6c257d0d4632ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollSpeed: 60
-  startPositionY: -600
-  creditText: {fileID: 1763857069}
-  creditText2: {fileID: 1926595315}
 --- !u!114 &1926595317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10601,12 +10716,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Produced By\nBen Zimmermann\n\nDirector \nBen Zimmermann\n\nLead programmer\nBen
-    Zimmermann\n\nMovement Programmer\nBrockosh\nBen Zimmermann\nMatteus Paul\n\nGame
+    Zimmermann\n\nMovement Programmer\nBrockosh\nBen Zimmermann\nMatth\xE4us Paul\n\nGame
     Design\nBen Zimmermann\n\nArt and Animation\nBen Zimmermann\nMixamo\n\nEnviorment
     Artist\nPolytope Studio\n\nFond Design\nThaleah\n\nSound and Music\nRelaxing
     Sounds of Nature\nsoundeffects8722\nLoungeV Films\n\nTester\nBen Zimmermann\nFurkan
-    Tuna\n\nSpecial Thanks\nDennis de Col\nFamily and Friends\nChatGBT\nYoutube Shuffle\n\nPowerd
-    by\nUnity 6.1\n\nCrown Fall @copyright\nmade as a learnig project\nat SRH Heidelberg\n"
+    Tuna\n\nSpecial Thanks\nDennis de Col\nFamily and Friends\nChatGPT\nYoutube Shuffle\nBohdan
+    Chumak\n\nPowerd by\nUnity 6.1\n\nCrown Fall @copyright\nmade as a learnig project\nat
+    SRH Heidelberg\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6362bbe57d381a34eb858d010e27685c, type: 2}
   m_sharedMaterial: {fileID: 2469721710052384028, guid: 6362bbe57d381a34eb858d010e27685c, type: 2}

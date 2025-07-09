@@ -40,7 +40,7 @@ public class UiManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         //bool isInvOpen = false;
-        bool isPaused = false;
+        //bool isPaused = false;
         if (InvCanvas != null)
             InvCanvas.SetActive(false);
         isInvOpen = false;
@@ -147,6 +147,7 @@ public class UiManager : MonoBehaviour
     public void QuitButtonPressed()
     {
         Debug.Log("QuitButtonPressed aufgerufen");
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
     public void DialogButtonPressed()

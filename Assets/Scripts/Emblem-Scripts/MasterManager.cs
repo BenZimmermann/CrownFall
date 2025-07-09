@@ -62,4 +62,11 @@ public class MasterManager : MonoBehaviour
             }
         }
     }
+    public void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }

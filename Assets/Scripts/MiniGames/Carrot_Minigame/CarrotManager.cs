@@ -22,4 +22,11 @@ public class CarrotManager : MonoBehaviour
         carrotCounter++;
         Debug.Log("Carrot collected! Total: " + carrotCounter);
     }
+    public void OnDestroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }
