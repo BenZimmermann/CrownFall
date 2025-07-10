@@ -17,7 +17,6 @@ public class ChestClass : MonoBehaviour, Interactable
     {
         SetOutline(false);
         objectRenderer = GetComponent<Renderer>();
-        originalMaterials = objectRenderer.materials;
     }
     public void Interact()
     {
@@ -28,6 +27,7 @@ public class ChestClass : MonoBehaviour, Interactable
         isEnabled = false;
         Debug.Log("Interacted with: Chest");
         Remove();
+        AudioManager.Instance.PlayChestCollect(); // Play the chest collect sound
 
         if (ChestManager.Instance.chestCounter >= 11)
         {

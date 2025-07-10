@@ -28,6 +28,7 @@ public class CollectClass : MonoBehaviour, Interactable
         isEnabled = false;
         used = true; // Assuming 'used' is a field in this class to track interaction state
         Debug.Log("Interacted with: Carrot");
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.CarrotCollect); // Play the carrot collect sound
         Destroy(gameObject);
 
         Remove();

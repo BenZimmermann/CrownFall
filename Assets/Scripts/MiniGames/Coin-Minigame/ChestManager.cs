@@ -28,6 +28,7 @@ public class ChestManager : MonoBehaviour
         if (chestCounter >= 11)
         {
             ChestPopupManager.Instance.ShowPopup("All Coins Returned!", 3f);
+            //AudioManager.Instance.PlaySFX(AudioManager.Instance.MinigameFinish);
             MasterManager.Instance.isCoin = true;
             MasterManager.Instance.MasterEmblem();
         }

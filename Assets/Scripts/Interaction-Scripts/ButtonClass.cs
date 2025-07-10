@@ -25,6 +25,7 @@ public class ButtonClass : MonoBehaviour, Interactable
         used = true; // Assuming 'used' is a field in this class to track interaction state
         isEnabled = false;
         Debug.Log("Interacted with: Button" );
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.DoorOpen); // Play the button activation sound
         Remove();
         Destroy(buttonFunc);
     }

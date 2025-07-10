@@ -50,6 +50,7 @@ public class MasterManager : MonoBehaviour
     private void GetMasterEmblem()
     {
         Debug.Log("Master Emblem Acquired!");
+
         List<Slots> slots = EmblemUI.Instance.GetSlots(); //<- emblem returned transform.GetComponentsInCHildren<Slots>().ToList();
         Debug.Log($"SlotCount: {slots.Count}");
         foreach (Slots slot in slots)

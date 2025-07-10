@@ -10,6 +10,7 @@ public class Emblem : MonoBehaviour
     {
         if (player.CompareTag("Player"))
         {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.CoinCollect);
             Debug.Log("Player entered the emblem trigger area.");
             // Get the EmblemUI instance and the list of slots
             var slots = EmblemUI.Instance.GetSlots();

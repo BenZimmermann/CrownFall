@@ -29,6 +29,7 @@ public class NPCClass : MonoBehaviour, Interactable
         Debug.Log("Interacted with: Stone_Guy");
         MasterManager.Instance.isDennis = true; // Set Dennis as true in MasterManager
         MasterManager.Instance.MasterEmblem();
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.NPCTalk); // Play the NPC interaction sound
         Remove();
         if (dialogueBox != null)
         {

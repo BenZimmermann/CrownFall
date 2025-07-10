@@ -44,6 +44,7 @@ public class FieldsManager : MonoBehaviour
         if (CarrotManager.Instance.carrotCounter >= 18)
         {
             FieldText.text = ("All Carrots Collected!");
+            //AudioManager.Instance.PlaySFX(AudioManager.Instance.MinigameFinish);
             MasterManager.Instance.isFarmer = true;
             MasterManager.Instance.MasterEmblem();
         }
