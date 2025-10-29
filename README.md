@@ -9,8 +9,9 @@ Das spiel wurde in 3 Wochen vom 17. Juni - 10 Juli Entwickelt.
 
 ### 2.  Inhalt / Features
 
->Liste der wichtigsten Spielmerkmale oder Funktionen
-	-Start Im Main Menu
+> Liste der wichtigsten Spielmerkmale oder Funktionen
+
+-Start Im Main Menu
 
 -Erklärung der Steuerung unter Settings
 
@@ -28,23 +29,23 @@ Das spiel wurde in 3 Wochen vom 17. Juni - 10 Juli Entwickelt.
 
 -kleine Easter Eggs zu finden
 
->Spielprinzip
+Spielprinzip
 Die aufgabe des spielers ist es, so schnell wie möglich nach oben ins ziel zu kommen. dabei muss er präziese sich vortbewegen, denn es gibt keine checkpoints. auf den weg nach
 oben kann der spieler außerdem 9 verschiedene embleme einsammeln. diese sind eine art acivements und haben keinen weiteren nutzen
 
->Besondere Mechaniken
+Besondere Mechaniken
 Keine Checkpoints -> echtes Risiko und Spannung
 Integrierter Speedrun-Modus (Timer)
 Symbolische Geschichte über Verlust, Wiederaufbau und Durchhaltevermögen
 Kombination aus präzisem Gameplay und emotionalem Storytelling
 
->Grafikstil
+Grafikstil
 -Grafik: Low Poly & Comic-Art-Stil
 -UI: Pixelart-Elemente
 -Farben: Helle, stilisierte Farbpalette
 -Atmosphäre: Fantasievoll, leicht melancholisch, aber hoffnungsvoll
 
->Plattform
+Plattform
 Entwikelt in Unity, ausschließlich für PC
 
 ### 3.  Story / Konzept
