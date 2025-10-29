@@ -1,13 +1,13 @@
 # README - CrownFall
 
-##  1. Titel & Kurzbeschreibung
+###  1. Titel & Kurzbeschreibung
 
 Nach einem tragischen Unglück explodierte der magische Energiekern des Königreichs.
 Die Druckwelle der Explosion schleuderte die Teile des Reiches in die Luft – und ließ sie dort erstarren.
  
 Das spiel wurde in 3 Wochen vom 17. Juni - 10 Juli Entwickelt.
 
-## 2.  Inhalt / Features
+### 2.  Inhalt / Features
 
 >Liste der wichtigsten Spielmerkmale oder Funktionen
 	-Start Im Main Menu
@@ -47,28 +47,28 @@ Kombination aus präzisem Gameplay und emotionalem Storytelling
 >Plattform
 Entwikelt in Unity, ausschließlich für PC
 
-## 3.  Story / Konzept
+### 3.  Story / Konzept
 
 Der Spieler schlüpft in die Rolle des Königs,
 dessen Aufgabe es ist, über die Trümmer des eigenen Reiches bis ganz nach oben zu gelangen.
 Auf dem Weg kann er seine verlorenen Embleme wiederfinden – Symbole seiner früheren Macht.
 Die aufgabe war es, ein 3D-Fistperson spiel zu entwickeln welches 3 verischiedene interaktionen hat und 5 verschidene 3D modelle besitzt
 
-## 4.  Technologien & Tools
+### 4.  Technologien & Tools
 
--Blender
+- Blender
 
--Substance Painter 3D
+- Substance Painter 3D
 
--Photoshop 2025
+- Photoshop 2025
 
--Aseprite
+- Aseprite
 
--Unity 6.1
+- Unity 6.1
 
--Davinci Resolve
+- Davinci Resolve
 
-## 5.  Installation / Starten des Spiels
+### 5.  Installation / Starten des Spiels
 
 + Ausführung des Spiels
  - pulle das Projekt aus dem github
@@ -89,81 +89,70 @@ Die aufgabe war es, ein 3D-Fistperson spiel zu entwickeln welches 3 verischieden
  -öffne die szene MainMenu
  -klicke auf den startknopf
 
-## 6.  Controls / Steuerung
+### 6.  Controls / Steuerung
 
--WASD um sich zu Bewegen
--Maus um sich umzuschauen
--Shift um zu sprinten
--Ppace-taste um zu springen
--E für Interaktionen
--I für Emblem-Inventar
--Esc für Pause
--Linke Maustaste um Im Menü auszuwählen
+- WASD um sich zu Bewegen
+- Maus um sich umzuschauen
+- Shift um zu sprinten
+- Ppace-taste um zu springen
+- E für Interaktionen
+- I für Emblem-Inventar
+- Esc für Pause
+- Linke Maustaste um Im Menü auszuwählen
 
-## 7.  Screenshots
+### 7.  Screenshots
 
 
 
-## 8.  Team / Credits
+### 8.  Team / Credits
 
-Entwickelt und Gestaltet von Ben Zimmermann
+### >Entwickelt und Gestaltet von Ben Zimmermann
 
- #Lizenzangabe
-# 5.1 Code:
+ # Lizenzangabe
+8.1 Code:
+https://www.youtube.com/watch?v=vBWcb\_0HF1c
 
-&nbsp;		https://www.youtube.com/watch?v=vBWcb\_0HF1c
+8.2 3D-Assets:
+https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-free-medieval-fantasy-series-187052
+**Das Kisten-Model und das NPC-Model ist von Dennis De Col**
 
-# 5.2 3D-Assets:
+8.3 UI-Assets(Fonts):
+https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059
 
-&nbsp;		https://assetstore.unity.com/packages/3d/environments/lowpoly-environment-nature-free-medieval-fantasy-series-187052
+8.4 Animationen:
+Sowohl die Idle-Animation vom Start-NPC ans auch die Schwebe-Animation vom End-NPC sind von Mixamo
+https://www.mixamo.com/#/
 
-&nbsp;		**Das Kisten-Model und das NPC-Model ist von Dennis De Col**
+8.5 Sounds:
+>!Einige Sounds/Effekte sind von mir zurechtgeschnitten/verändert worden!
 
-# 5.3 UI-Assets(Fonts):
-
-&nbsp;		https://assetstore.unity.com/packages/2d/fonts/free-pixel-font-thaleah-140059
-
-# 5.4 Animationen:
-
-&nbsp;		Sowohl die Idle-Animation vom Start-NPC ans auch die Schwebe-Animation vom End-NPC sind von Mixamo
-
-&nbsp;		https://www.mixamo.com/#/
-
-# 	5.5 Sounds:
-
-- !Einige Sounds/Effekte sind von mir zurechtgeschnitten/verändert worden!
-
-# 		5.5.1 Ambiente:
-
+8.5.1 Ambiente:
 \[Relaxing Wind Sounds Through The Grass Field 8 Hours / Body Movement (Free Flow)](https://www.youtube.com/watch?v=dd212H6kjEQ)
 \[the sound of the wind](https://www.youtube.com/shorts/0vb9-Q0oFdA)
 \[The Sweetest Sleep Music ☯ Relaxing Vocal Elf Music for Deep Sleeping](https://www.youtube.com/watch?v=3UUkV6cRe8g\&t=1756s)
 
-# 5.5.2 Credits:
-
+8.5.2 Credits:
  Music by <a href="https://pixabay.com/de/users/music\_for\_videos-26992513/?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=111915">Anastasia Chubarova</a> 
  from <a href="https://pixabay.com/music//?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=111915">Pixabay</a>
 
-# 5.5.3 Sound-Effekte:
-
+8.5.3 Sound-Effekte:
 -Sound Effect by <a href="https://pixabay.com/de/users/universfield-28281460/?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=243762">Universfield</a> from <a href="https://pixabay.com/sound-effects//?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=243762">Pixabay</a> (Level Up 04)
-
 -Sound Effect by <a href="https://pixabay.com/de/users/freesound\_community-46691455/?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=88793">freesound\_community</a> from <a 								href="https://pixabay.com/sound-effects//?utm\_source=link-attribution\&utm\_medium=referral\&utm\_campaign=music\&utm\_content=88793">Pixabay</a> (coin flip)
 
-## 9.  Bekannte Bugs
+### 9.  Bekannte Bugs
 
-# 4.1 Steuerung
+9.1 Steuerung
 -Ein Fehler, der es dem Spieler Erlaubt, Wände unter 90° hochzulaufen, wenn sie W drücken und die Maus schnell hin und her bewegen.	
 
-# 4.2 Emblem Inventar
+9.2 Emblem Inventar
 -Ein Fehler, der das gehoverte Element falsch anzeigt, wenn man das Inventar schließt und wieder Öffnet.
 
-# 4.3 Sound 
+9.3 Sound 
 -Ein Fehler, der Zwischen den Ambient-Loops eine kurze pause macht (~0.5 sek).
 -Manche Sounds können extrem laut werden.
 
 
-## 10.  Lizenz
+### 10.  Lizenz
 
 Das Gesammte Projekt ist im schulischen kontext entstanden und gehört daher den SRH Fachschulen.
 
