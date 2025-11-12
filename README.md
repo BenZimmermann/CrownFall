@@ -5,7 +5,7 @@
 After a tragic accident, the kingdom’s magical energy core exploded.
 The resulting blast shattered the realm and hurled its fragments into the sky, where they now remain suspended in time.
 
-CrownFall was developed as a learning project within three weeks (June 17 – July 10).
+CrownFall was developed as a learning project within three weeks (June 17 - July 10).
 It tells the symbolic story of a fallen king striving to reclaim what was lost — both his world and his strength.
 
 # Gameplay Loop
@@ -16,7 +16,7 @@ It tells the symbolic story of a fallen king striving to reclaim what was lost �
 
 + Explore the floating remains of the kingdom.
 
-+ Move carefully upward to reach the goal — there are no checkpoints.
++ Move carefully upward to reach the goal - there are no checkpoints.
 
 + Collect chests, carrots, and nine unique emblems as optional achievements.
 
@@ -28,14 +28,14 @@ It tells the symbolic story of a fallen king striving to reclaim what was lost �
 
 # Controls
 
-+ WASD – Move
-+ Mouse – Look around
-+ Shift – Sprint
-+ Space – Jump
-+ E – Interact
-+ I – Open emblem inventory
-+ ESC – Pause
-+ Left Mouse Button – Select in menus
++ WASD - Move
++ Mouse - Look around
++ Shift - Sprint
++ Space - Jump
++ E - Interact
++ I - Open emblem inventory
++ ESC - Pause
++ Left Mouse Button - Select in menus
 
 # Features
 
@@ -115,3 +115,6 @@ Developed and designed by Ben Zimmermann
 
 + Sound effects by Universfield and freesound_community from Pixabay
 
+---
+
+If you copy this code, credit me - or I will haunt you in your dreams!
