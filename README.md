@@ -8,6 +8,8 @@ The resulting blast shattered the realm and hurled its fragments into the sky, w
 CrownFall was developed as a learning project within three weeks (June 17 - July 10).
 It tells the symbolic story of a fallen king striving to reclaim what was lost â€” both his world and his strength.
 
+![](Crownfall_Imgs/Img_1.png)
+
 # Gameplay Loop
 
 + Begin at the Main Menu.
@@ -81,7 +83,15 @@ It tells the symbolic story of a fallen king striving to reclaim what was lost â
 
 # Gallery
 
-(Add screenshots or GIFs showing gameplay, UI, and the environment.)
+![](Crownfall_Imgs/Img_6.png)
+
+![](Crownfall_Imgs/Img_5.png)
+
+![](Crownfall_Imgs/Img_3.png)
+
+![](Crownfall_Imgs/Img_2.png)
+
+![](Crownfall_Imgs/Img_7.png)
 
 # Author
 
