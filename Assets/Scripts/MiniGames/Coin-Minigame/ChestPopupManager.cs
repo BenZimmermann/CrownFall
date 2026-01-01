@@ -31,4 +31,11 @@ public class ChestPopupManager : MonoBehaviour
     {
         popupWindow.SetActive(false);
     }
+    private void Destroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }

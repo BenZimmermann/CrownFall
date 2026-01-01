@@ -23,5 +23,13 @@ public class EmblemUI : MonoBehaviour
     public List<Slots> GetSlots()
     {
        return transform.GetComponentsInChildren<Slots>().ToList();
-    }   
+    }
+
+    private void Destroy()
+    {
+        if (Instance == this)
+        {
+            Instance = null;
+        }
+    }
 }

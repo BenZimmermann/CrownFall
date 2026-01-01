@@ -47,6 +47,7 @@ public class StartUIManager : MonoBehaviour
     public void OnExitPressed()
     {
         Debug.Log("Exit Game Pressed");
+        Application.Quit();
     }
     public void OnbackPressed()
     {
@@ -64,5 +65,9 @@ public class StartUIManager : MonoBehaviour
         }
         MainMenu.SetActive(true);
         CreditManager.Instance.ResetCredits();
+    }
+    public void OnGithubPressed()
+    {
+        Application.OpenURL("https://github.com/BenZimmermann");
     }
 }
