@@ -96,7 +96,10 @@ It tells the symbolic story of a fallen king striving to reclaim what was lost â
 # Author
 
 Developed and designed by Ben Zimmermann
+# Try It
 
+If you want to try the Game for yourself you can download it here:
+[](https://srhfachschulen.itch.io/crownfall)
 # Credits
 
 ### Code Reference:
