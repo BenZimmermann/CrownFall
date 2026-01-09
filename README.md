@@ -99,7 +99,8 @@ Developed and designed by Ben Zimmermann
 # Try It
 
 If you want to try the Game for yourself you can download it here:
-[](https://srhfachschulen.itch.io/crownfall)
+(https://srhfachschulen.itch.io/crownfall)
+
 # Credits
 
 ### Code Reference:
